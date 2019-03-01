@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class camMouseLock : MonoBehaviour {
+public class camMouseLook : MonoBehaviour {
+
     Vector2 mouseLook;
     Vector2 smoothV;
-    public float sensitivity = 5.0f;
+    public float sensitivity = 3.0f;
     public float smoothing = 2.0f;
 
     GameObject character;
