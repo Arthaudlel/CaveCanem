@@ -22,13 +22,17 @@ public class PlayerRaycasting : MonoBehaviour {
         if (Physics.Raycast(this.transform.position, this.transform.forward, out whatIHit, distanceToSee))
         {
             //Debug.Log("Itouched something" + whatIHit.collider.gameObject.name);
-            if (whatIHit.collider.tag == "Door")
+            if (whatIHit.collider.tag == "Terminal")
             {
-                GameObject.Find("InteractionText").GetComponent<Text>().text = "Press E to open";
+                GameObject.Find("InteractionText").GetComponent<Text>().text = "Press E to Use";
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    whatIHit.collider.gameObject.GetComponent<OpeningDoor>().opening = true;
+                    //whatIHit.collider.gameObject.GetComponent<OpeningDoor>().opening = true;
                 }
+            }
+            else
+            {
+                GameObject.Find("InteractionText").GetComponent<Text>().text = "";
             }
         }
         else
