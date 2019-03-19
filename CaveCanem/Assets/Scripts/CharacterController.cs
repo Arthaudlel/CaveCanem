@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterController : MonoBehaviour {
-    public float speed = 10.0F;
+    public float speed = 2.0F;
 
 	// Use this for initialization
 	void Start () {

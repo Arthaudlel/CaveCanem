@@ -18,6 +18,5 @@ public class SetMasterVolume : MonoBehaviour
     {
         mixer.SetFloat("MasterVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("MasterValue", sliderValue);
-        Debug.Log("Master Volume " + sliderValue);
     }
 }

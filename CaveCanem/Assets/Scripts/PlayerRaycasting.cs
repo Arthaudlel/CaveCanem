@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerRaycasting : MonoBehaviour {
@@ -21,13 +20,13 @@ public class PlayerRaycasting : MonoBehaviour {
         Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.yellow);
         if (Physics.Raycast(this.transform.position, this.transform.forward, out whatIHit, distanceToSee))
         {
-            //Debug.Log("Itouched something" + whatIHit.collider.gameObject.name);
-            if (whatIHit.collider.tag == "Terminal")
+            if (whatIHit.collider.gameObject.name == "Laptop")
             {
                 GameObject.Find("InteractionText").GetComponent<Text>().text = "Press E to Use";
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    //whatIHit.collider.gameObject.GetComponent<OpeningDoor>().opening = true;
+                    Debug.Log("interacting with " + whatIHit.collider.gameObject.name);
+                    SceneManager.LoadScene(2);
                 }
             }
             else

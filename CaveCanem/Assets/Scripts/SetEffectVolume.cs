@@ -19,7 +19,6 @@ public class SetEffectVolume : MonoBehaviour
         float masterValue = PlayerPrefs.GetFloat("MasterVolume", 1f);
         mixer.SetFloat("EffectVol", Mathf.Log10(sliderValue * masterValue) * 20);
         PlayerPrefs.SetFloat("EffectValue", sliderValue);
-        Debug.Log("Effect Volume " + sliderValue);
     }
 
     public void AdaptToMaster(float sliderValue)
