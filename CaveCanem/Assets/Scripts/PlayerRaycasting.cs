@@ -28,12 +28,12 @@ public class PlayerRaycasting : MonoBehaviour {
             if (whatIHit.collider.gameObject.name == "Laptop")
             {
                 GameObject.Find("InteractionText").GetComponent<Text>().text = "Press E to Use";
-                /*
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     Debug.Log("interacting with " + whatIHit.collider.gameObject.name);
                     SceneManager.LoadScene(2);
                 }
+                /*
                 if (Input.GetKeyDown(KeyCode.Keypad0))
                 {
                     whatIHit.collider.gameObject.GetComponent<OpeningDoor>().opening = true;
