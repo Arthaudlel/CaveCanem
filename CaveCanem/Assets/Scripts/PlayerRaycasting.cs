@@ -16,7 +16,7 @@ public class PlayerRaycasting : MonoBehaviour {
 	void Start () {
         InformationUi = GameObject.Find("MyInformationsPaper");
         InformationUi.SetActive(false);
-        GameObject Camera = GameObject.Find("MainCamera");
+        //GameObject Camera = GameObject.Find("MainCamera");
         MyComponentManager.ChallengeLevel = SceneManager.GetActiveScene().buildIndex;
         //MyComponentManager.Success = false;
         Debug.Log(MyComponentManager.ChallengeLevel);
@@ -52,16 +52,16 @@ public class PlayerRaycasting : MonoBehaviour {
             {
                 if (InformationUi.activeSelf)
                 {
-                    GameObject.Find("InteractionText").GetComponent<Text>().text = "Press 0 to Exit";
+                    GameObject.Find("InteractionText").GetComponent<Text>().text = "Press Q to Exit";
                 } else {
-                    GameObject.Find("InteractionText").GetComponent<Text>().text = "Press 0 to Read";
+                    GameObject.Find("InteractionText").GetComponent<Text>().text = "Press Q to Read";
                 }
-                if (Input.GetKeyDown(KeyCode.Keypad0) && !InformationUi.activeSelf)
+                if (Input.GetKeyDown(KeyCode.Q) && !InformationUi.activeSelf)
                 {
                     InformationUi.SetActive(true);
                     this.GetComponent<camMouseLook>().sensitivity = 0f;
                 }
-                else if (Input.GetKeyDown(KeyCode.Keypad0) && InformationUi.activeSelf)
+                else if (Input.GetKeyDown(KeyCode.Q) && InformationUi.activeSelf)
                 {
                     this.GetComponent<camMouseLook>().sensitivity = 3f;
                     InformationUi.SetActive(false);

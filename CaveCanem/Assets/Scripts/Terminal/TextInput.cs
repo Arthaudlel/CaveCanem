@@ -16,7 +16,7 @@ public class TextInput : MonoBehaviour
         se = new InputField.SubmitEvent();
         se.AddListener(SubmitInput);
         input.onEndEdit = se;
-        output.text = "Callenge " + (MyComponentManager.ChallengeLevel - 1);
+        output.text = "Challenge " + (MyComponentManager.ChallengeLevel - 1);
     }
 
     private void SubmitInput(string arg0)
