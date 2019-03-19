@@ -2084,7 +2084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 739c6569a1eb0c448804a9e0e49f34b1, type: 3}
-  VideoMode: 0
+  VideoMode: 1
   DisplaySizeX: 1920
   DisplaySizeY: 1080
   StretchToDisplay: 0
