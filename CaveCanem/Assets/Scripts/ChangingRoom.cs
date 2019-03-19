@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangingRoom : MonoBehaviour
 {
+    int activeScene;
     public void LoadSceneByIndex(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
@@ -18,7 +19,9 @@ public class ChangingRoom : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.None;
             }
-            LoadSceneByIndex(0);
+            MyComponentManager.Success = false;
+            activeScene = SceneManager.GetActiveScene().buildIndex;
+            LoadSceneByIndex(activeScene + 1);
         }
     }
 }

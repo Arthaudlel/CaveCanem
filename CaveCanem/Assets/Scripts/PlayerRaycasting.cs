@@ -16,29 +16,37 @@ public class PlayerRaycasting : MonoBehaviour {
 	void Start () {
         InformationUi = GameObject.Find("MyInformationsPaper");
         InformationUi.SetActive(false);
+        GameObject Camera = GameObject.Find("MainCamera");
+        MyComponentManager.ChallengeLevel = SceneManager.GetActiveScene().buildIndex;
+        //MyComponentManager.Success = false;
+        Debug.Log(MyComponentManager.ChallengeLevel);
     }
 
     // Update is called once per frame
     void Update () {
         Debug.DrawRay(this.transform.position, this.transform.forward * distanceToSee, Color.yellow);
+        if (MyComponentManager.Success == true)
+        {
+            GameObject.Find("Door").GetComponent<OpeningDoor>().opening = true;
+        }
         if (Physics.Raycast(this.transform.position, this.transform.forward, out whatIHit, distanceToSee))
         {
             //Debug.Log("Itouched something" + whatIHit.collider.gameObject.name);
-            //if (whatIHit.collider.tag == "Door")
+            if (whatIHit.collider.tag == "Door") {
+                if (Input.GetKeyDown(KeyCode.Keypad0))
+                {
+                    whatIHit.collider.gameObject.GetComponent<OpeningDoor>().opening = true;
+                }
+            }
             if (whatIHit.collider.gameObject.name == "Laptop")
             {
                 GameObject.Find("InteractionText").GetComponent<Text>().text = "Press E to Use";
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     Debug.Log("interacting with " + whatIHit.collider.gameObject.name);
-                    SceneManager.LoadScene(2);
+                    //Scene terminalScene = SceneManager.GetSceneAt(1); le nombre un marche pas
+                    SceneManager.LoadScene(1);
                 }
-                /*
-                if (Input.GetKeyDown(KeyCode.Keypad0))
-                {
-                    whatIHit.collider.gameObject.GetComponent<OpeningDoor>().opening = true;
-                }
-                
             }
             else if (whatIHit.collider.tag == "InformationsPaper")
             {
