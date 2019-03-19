@@ -33,6 +33,7 @@ public class PlayerRaycasting : MonoBehaviour {
                     Debug.Log("interacting with " + whatIHit.collider.gameObject.name);
                     SceneManager.LoadScene(2);
                 }
+                /*
                 if (Input.GetKeyDown(KeyCode.Keypad0))
                 {
                     whatIHit.collider.gameObject.GetComponent<OpeningDoor>().opening = true;
