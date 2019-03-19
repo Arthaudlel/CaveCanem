@@ -30,7 +30,6 @@ public class PlayerRaycasting : MonoBehaviour {
                 GameObject.Find("InteractionText").GetComponent<Text>().text = "Press E to Use";
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    Debug.Log("interacting with " + whatIHit.collider.gameObject.name);
                     SceneManager.LoadScene(2);
                 }
                 /*
@@ -42,13 +41,13 @@ public class PlayerRaycasting : MonoBehaviour {
             }
             else if (whatIHit.collider.tag == "InformationsPaper")
             {
-                GameObject.Find("InteractionText").GetComponent<Text>().text = "Press 0 to Read";
-                if (Input.GetKeyDown(KeyCode.Keypad0))
+                GameObject.Find("InteractionText").GetComponent<Text>().text = "Press Q to Read";
+                if (Input.GetKeyDown(KeyCode.Q) && !InformationUi.activeSelf)
                 {
                     InformationUi.SetActive(true);
                     this.GetComponent<camMouseLook>().sensitivity = 0f;
                 }
-                if (Input.GetKeyDown(KeyCode.Escape) && InformationUi.activeSelf)
+                else if (Input.GetKeyDown(KeyCode.Q) && InformationUi.activeSelf)
                 {
                     this.GetComponent<camMouseLook>().sensitivity = 3f;
                     InformationUi.SetActive(false);
