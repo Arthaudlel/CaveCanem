@@ -17,11 +17,13 @@ public class PlayerRaycasting : MonoBehaviour {
 	void Start () {
         InformationUi = GameObject.Find("MyInformationsPaper");
         InformationUi.SetActive(false);
-        NotesUi = GameObject.Find("SomeNotes");
-        NotesUi.SetActive(false);
         //GameObject Camera = GameObject.Find("MainCamera");
         MyComponentManager.ChallengeLevel = SceneManager.GetActiveScene().buildIndex;
-        //MyComponentManager.Success = false;
+        if (MyComponentManager.ChallengeLevel == 2)
+        {
+            NotesUi = GameObject.Find("SomeNotes");
+            NotesUi.SetActive(false);
+        }
         Debug.Log(MyComponentManager.ChallengeLevel);
     }
 
@@ -34,7 +36,7 @@ public class PlayerRaycasting : MonoBehaviour {
         }
         if (Physics.Raycast(this.transform.position, this.transform.forward, out whatIHit, distanceToSee))
         {
-            Debug.Log("Itouched something" + whatIHit.collider.gameObject.name);
+            //Debug.Log("Itouched something" + whatIHit.collider.gameObject.name);
             if (whatIHit.collider.tag == "Door") {
                 if (Input.GetKeyDown(KeyCode.Keypad0))
                 {

@@ -31,6 +31,10 @@ public class InputHandler : MonoBehaviour
                     return "Challenge 1: \n Wrong Password ! :(";
                 }
             }
+            else if (str == "ls")
+            {
+                return "Challenge 1: \n No File Found";
+            }
             else
                 return "Challenge 1: \n Unknow Command";
         }
