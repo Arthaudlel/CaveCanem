@@ -20,7 +20,8 @@ public class ManipulateImage : MonoBehaviour
 
     public void setAlpha(float sliderValue)
     {
-        image = GetComponent<Image>();
+        Debug.Log("mdr");
+        //image = GetComponent<Image>();
         var tmpColor = image.color;
         tmpColor.a = sliderValue;
         image.color = tmpColor;
