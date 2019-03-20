@@ -2684,8 +2684,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Commandes :\n\n- ls : \nAffiche la liste des fichiers\n\n- show NomDuFichier
-    : \nAffiche le contenue du fichier"
+  m_Text: "\t\t\t\t\tIndices\n\n-Les mots de passe ne sont pas toujours lisible.\n\n-On
+    se sert souvent de base arithmetique comme le binaire ou l'hexadecimal.\n\n-Le
+    pr\xE9fixe \"0x\" est utilis\xE9 pour informer qu'il s'agit d'une base h\xE9xad\xE9cimal\n\n-Le
+    mot de passe que vous chercher corresponds aux valeur H\xE9xad\xE9cimal dans la
+    table Ascii.\n\n\t\t\t\tPage 1/2"
 --- !u!222 &1005568652
 CanvasRenderer:
   m_ObjectHideFlags: 0

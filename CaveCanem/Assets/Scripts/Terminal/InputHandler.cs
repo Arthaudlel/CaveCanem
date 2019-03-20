@@ -48,6 +48,19 @@ public class InputHandler : MonoBehaviour
                     return "Challenge 2: \n Wrong Password ! :(";
                 }
             }
+            else if (str == "ls") {
+                return "Challenge 2: \n EncodedPassword.txt";
+            }
+            else if (str.StartsWith("show "))
+            {
+                if (str == "show EncodedPassword.txt")
+                {
+                    return "Challenge 2: \n 0x5b 0x50 0x41 0x53 0x53 0x5d 0x4e 0x31 0x63 0x33 0x4a 0x6f 0x62 0x21";
+                } else
+                {
+                    return "Challenge 2: \n Unknow File.";
+                }
+            }
             else
                 return "Challenge 2: \n Unknow Command";
         }

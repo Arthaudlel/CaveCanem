@@ -10,12 +10,15 @@ public class PlayerRaycasting : MonoBehaviour {
     public float distanceToSee;
     RaycastHit whatIHit;
     GameObject InformationUi;
+    GameObject NotesUi;
     bool IsPaused = false;
 
 	// Use this for initialization
 	void Start () {
         InformationUi = GameObject.Find("MyInformationsPaper");
         InformationUi.SetActive(false);
+        NotesUi = GameObject.Find("SomeNotes");
+        NotesUi.SetActive(false);
         //GameObject Camera = GameObject.Find("MainCamera");
         MyComponentManager.ChallengeLevel = SceneManager.GetActiveScene().buildIndex;
         //MyComponentManager.Success = false;
@@ -31,7 +34,7 @@ public class PlayerRaycasting : MonoBehaviour {
         }
         if (Physics.Raycast(this.transform.position, this.transform.forward, out whatIHit, distanceToSee))
         {
-            //Debug.Log("Itouched something" + whatIHit.collider.gameObject.name);
+            Debug.Log("Itouched something" + whatIHit.collider.gameObject.name);
             if (whatIHit.collider.tag == "Door") {
                 if (Input.GetKeyDown(KeyCode.Keypad0))
                 {
@@ -44,8 +47,28 @@ public class PlayerRaycasting : MonoBehaviour {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     Debug.Log("interacting with " + whatIHit.collider.gameObject.name);
-                    //Scene terminalScene = SceneManager.GetSceneAt(1); le nombre un marche pas
                     SceneManager.LoadScene(1);
+                }
+            }
+            else if (whatIHit.collider.tag == "Notes")
+            {
+                if (NotesUi.activeSelf)
+                {
+                    GameObject.Find("InteractionText").GetComponent<Text>().text = "Press Q to Exit";
+                }
+                else
+                {
+                    GameObject.Find("InteractionText").GetComponent<Text>().text = "Press Q to Read";
+                }
+                if (Input.GetKeyDown(KeyCode.Q) && !NotesUi.activeSelf)
+                {
+                    NotesUi.SetActive(true);
+                    this.GetComponent<camMouseLook>().sensitivity = 0f;
+                }
+                else if (Input.GetKeyDown(KeyCode.Q) && NotesUi.activeSelf)
+                {
+                    this.GetComponent<camMouseLook>().sensitivity = 3f;
+                    NotesUi.SetActive(false);
                 }
             }
             else if (whatIHit.collider.tag == "InformationsPaper")
