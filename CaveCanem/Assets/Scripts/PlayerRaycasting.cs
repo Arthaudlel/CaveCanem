@@ -19,7 +19,7 @@ public class PlayerRaycasting : MonoBehaviour {
         InformationUi.SetActive(false);
         //GameObject Camera = GameObject.Find("MainCamera");
         MyComponentManager.ChallengeLevel = SceneManager.GetActiveScene().buildIndex;
-        if (MyComponentManager.ChallengeLevel == 2)
+        if (MyComponentManager.ChallengeLevel == 2 || MyComponentManager.ChallengeLevel == 3)
         {
             NotesUi = GameObject.Find("SomeNotes");
             NotesUi.SetActive(false);
