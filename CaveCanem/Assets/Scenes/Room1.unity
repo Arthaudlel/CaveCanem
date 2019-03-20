@@ -6837,6 +6837,7 @@ GameObject:
   - component: {fileID: 1573975403}
   - component: {fileID: 1573975404}
   - component: {fileID: 1573975400}
+  - component: {fileID: 1573975405}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -6983,6 +6984,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceToSee: 3
+--- !u!114 &1573975405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573975397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0dd068e3e176ae4dac957ff7396c692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1598628743
 GameObject:
   m_ObjectHideFlags: 0
@@ -8639,8 +8652,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Commandes :\n\n- ls : \nAffiche la liste des fichiers\n\n- show NomDuFichier
-    : \nAffiche le contenue du fichier"
+  m_Text: "\t\t\t\t\tCommandes :\n\n- ls : \nAffiche la liste des fichiers\n\n- show
+    NomDuFichier : \nAffiche le contenue du fichier\n\n-pass [PASS]******:\nEntre
+    le mot de pass pour ouvrir la porte\n\n-quit ou Quit:\nQuitte le Terminal\n\n\n\n\t\n\t
+    \   \t\t\t Page 1/1"
 --- !u!222 &1853217468
 CanvasRenderer:
   m_ObjectHideFlags: 0

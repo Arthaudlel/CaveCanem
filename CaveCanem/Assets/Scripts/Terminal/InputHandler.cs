@@ -20,16 +20,36 @@ public class InputHandler : MonoBehaviour
         }
         if (activeScene == 2)
         {
-            if (str == "pass")
+            if (str.StartsWith("pass "))
             {
-                MyComponentManager.Success = true;
-                return "Challenge 1: \n You Gess Right :)";
+                if (str == "pass [PASS]Th4tW4s3asy!")
+                {
+                    MyComponentManager.Success = true;
+                    return "Challenge 1: \n You Gess Right :)";
+                } else
+                {
+                    return "Challenge 1: \n Wrong Password ! :(";
+                }
             }
-            return "Challenge 1:";
+            else
+                return "Challenge 1: \n Unknow Command";
         }
         else if (activeScene == 3)
         {
-            return "Challenge 2:";
+            if (str.StartsWith("pass "))
+            {
+                if (str == "pass [PASS]N1c3Job!")
+                {
+                    MyComponentManager.Success = true;
+                    return "Challenge 2: \n You Gess Right :)";
+                }
+                else
+                {
+                    return "Challenge 2: \n Wrong Password ! :(";
+                }
+            }
+            else
+                return "Challenge 2: \n Unknow Command";
         }
         return "";
     }
