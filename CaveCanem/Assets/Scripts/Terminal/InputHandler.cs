@@ -68,6 +68,38 @@ public class InputHandler : MonoBehaviour
             else
                 return "Challenge 2: \n Unknow Command";
         }
+        else if (activeScene == 4)
+        {
+            if (str.StartsWith("pass "))
+            {
+                if (str == "pass [PASS]B1nary1sCool!")
+                {
+                    MyComponentManager.Success = true;
+                    return "Challenge 3: \n You Gess Right :)";
+                }
+                else
+                {
+                    return "Challenge 3: \n Wrong Password ! :(";
+                }
+            }
+            else if (str == "ls")
+            {
+                return "Challenge 3: \n EncodedPassword.txt";
+            }
+            else if (str.StartsWith("show "))
+            {
+                if (str == "show EncodedPassword.txt")
+                {
+                    return "Challenge 3: \n 01011011 01010000 01000001 01010011 01010011 01011101 01000010 00110001 01101110 01100001 01110010 01111001 00110001 01110011 01000011 01101111 01101111 01101100 00100001";
+                }
+                else
+                {
+                    return "Challenge 3: \n Unknow File.";
+                }
+            }
+            else
+                return "Challenge 2: \n Unknow Command";
+        }
         return "";
     }
 }
