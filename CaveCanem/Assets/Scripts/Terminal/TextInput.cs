@@ -9,9 +9,12 @@ public class TextInput : MonoBehaviour
     InputField input;
     InputField.SubmitEvent se;
     public Text output;
+    static public GameObject PhotoInterface;
 
     void Start()
     {
+        PhotoInterface = GameObject.Find("PhotoManip");
+        PhotoInterface.SetActive(false);
         input = gameObject.GetComponent<InputField>();
         se = new InputField.SubmitEvent();
         se.AddListener(SubmitInput);

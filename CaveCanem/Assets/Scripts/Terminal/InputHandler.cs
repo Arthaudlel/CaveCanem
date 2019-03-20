@@ -26,7 +26,8 @@ public class InputHandler : MonoBehaviour
                 {
                     MyComponentManager.Success = true;
                     return "Challenge 1: \n You Gess Right :)";
-                } else
+                }
+                else
                 {
                     return "Challenge 1: \n Wrong Password ! :(";
                 }
@@ -52,7 +53,8 @@ public class InputHandler : MonoBehaviour
                     return "Challenge 2: \n Wrong Password ! :(";
                 }
             }
-            else if (str == "ls") {
+            else if (str == "ls")
+            {
                 return "Challenge 2: \n EncodedPassword.txt";
             }
             else if (str.StartsWith("show "))
@@ -60,7 +62,8 @@ public class InputHandler : MonoBehaviour
                 if (str == "show EncodedPassword.txt")
                 {
                     return "Challenge 2: \n 0x5b 0x50 0x41 0x53 0x53 0x5d 0x4e 0x31 0x63 0x33 0x4a 0x6f 0x62 0x21";
-                } else
+                }
+                else
                 {
                     return "Challenge 2: \n Unknow File.";
                 }
@@ -98,7 +101,41 @@ public class InputHandler : MonoBehaviour
                 }
             }
             else
-                return "Challenge 2: \n Unknow Command";
+                return "Challenge 3: \n Unknow Command";
+        }
+        else if (activeScene == 5)
+        {
+            if (str.StartsWith("pass "))
+            {
+                if (str == "pass [PASS]Img4reD4t4Too!")
+                {
+                    MyComponentManager.Success = true;
+                    return "Challenge 4: \n You Gess Right :)";
+                }
+                else
+                {
+                    return "Challenge 4: \n Wrong Password ! :(";
+                }
+            }
+            else if (str == "ls")
+            {
+                return "Challenge 4: \n Kitty.img";
+            }
+            else if (str.StartsWith("show "))
+            {
+                if (str == "show Kitty.img")
+                {
+                    TextInput.PhotoInterface.SetActive(true);
+                    Cursor.lockState = CursorLockMode.None;
+                    return "Challenge 4: ";
+                }
+                else
+                {
+                    return "Challenge 4: \n Unknow File.";
+                }
+            }
+            else
+                return "Challenge 4: \n Unknow Command";
         }
         return "";
     }
